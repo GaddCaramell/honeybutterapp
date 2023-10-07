@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Masyarakat_controller;
 use App\Http\Controllers\PengaduanController;
+use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\Registrasi_controller;
 use App\Models\Masyarakat;
 use Illuminate\Support\Facades\Route;
@@ -35,3 +36,10 @@ Route::post('simpanLogin',[Masyarakat_controller::class,'cekLogin']); // <-- unt
 //Pengaduan
 Route::get('Mengadu',[PengaduanController::class,'pengaduan']);
 Route::post('simpanPengaduan',[PengaduanController::class,'savepengaduan']);
+
+// LoginAdmin
+Route::get('loginadmin',[PetugasController::class,'adminLogin']);
+Route::post('simpanLoginAdmin',[PetugasController::class,'cekLoginAdmin']); // <-- untuk mengirim data ke server
+
+//DashAdmin
+Route::get('DashboardAdmin',[PetugasController::class,'adminDash']);

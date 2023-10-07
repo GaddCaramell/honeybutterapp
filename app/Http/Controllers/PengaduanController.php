@@ -13,5 +13,9 @@ class PengaduanController extends Controller
     
     public function simpanPengaduan(Request $request){
         $pengadu = new Pengaduan();
+        
+        $cek = $request->validate([
+
+        ]);
     }
 }

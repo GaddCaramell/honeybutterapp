@@ -15,13 +15,16 @@
             background-color: #a8a3a3;
             color: black
         }
+        .judul{
+          font-family: fantasy;
+        }
     </style>
 </head>
 <body>
       {{-- Awal Navbar --}}
       <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-light" style="background-color : #a8a3a3;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">PPM  </a>
+          <a class="navbar-brand judul" href="Dashboard">LAPORKAN!</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -29,16 +32,6 @@
             <ul class="navbar-nav">
               <li class="nav-item" >
                 <a class="nav-link active" aria-current="page" href="#">Pengaduan</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Validasi</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Tanggapan</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Laporan</a>
-              </li>
             </ul>
           </div>
         </div>

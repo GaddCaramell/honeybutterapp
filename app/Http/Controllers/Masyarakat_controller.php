@@ -42,7 +42,7 @@ class Masyarakat_controller extends Controller
     }
     
     public function loginadmin(){
-        return view('Masyarakat.login   admin');
+        return view('Masyarakat.loginadmin');
     }
 
     public function cekLogin(Request $request){
