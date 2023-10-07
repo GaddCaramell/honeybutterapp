@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="css\bootstrap.min.css">
     <style>
         .headertabel{
@@ -18,6 +18,12 @@
           padding-left: 20% ;
           padding-right: 20%;
           padding-top: 2%;
+        }
+        .buton{
+          background-color: red;
+          color: white;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          
         }
     </style>
 </head>
@@ -78,34 +84,25 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <div class="container pt-5 my-4">
-        <div class="card shadow">
-            <div class="card" >
-                <h5 class="card-header headertabel">Status Pengaduan</h5>
-                <div class="card-body">
-                    {{-- <h5 class="card-title"></h5> --}}
-                    <table class=" table table-striped-columns">
-                        <thead>
-                            <th>NIK</th>
-                            <th>Nama</th>
-                            <th>Telpon</th>
-                            <th></th>
-                        </thead>
-                        <tbody>
-                        @foreach($bebas as $item)
-                        <tr>
-                          <td>{{$item->nik}}</td>
-                          <td>{{$item->nama}}</td>
-                          <td>{{$item->telpon}}</td>
-                        </tr>
-                        @endforeach
-                        </tbody>
-                      </table></p>
-                </div>
-            </div>
-        </div>
+      {{-- <h5 class="card-title"></h5> --}}
+        <div class="d-grid gap-2 col-6 mx-auto pt-5">
+          <a class="btn buton" href="{{url('Mengadu')}}" role="button">Buat Laporan</a>
         </div>
       {{-- akhir nambah konten --}}
+      {{-- Footer --}}
+      <div class="container pt-5">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+          </ul>
+          <p class="text-center text-body-secondary">&copy; 2023 Company, Inc</p>
+        </footer>
+      </div>
+      
       <script src="js\bootstrap.bundle.min.js"></script>
 </body>
 </html>

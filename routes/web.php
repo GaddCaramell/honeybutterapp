@@ -43,3 +43,5 @@ Route::post('simpanLoginAdmin',[PetugasController::class,'cekLoginAdmin']); // <
 
 //DashAdmin
 Route::get('DashboardAdmin',[PetugasController::class,'adminDash']);
+//ValdAdmin
+Route::get('Validasi',[PetugasController::class,'adminValid']);

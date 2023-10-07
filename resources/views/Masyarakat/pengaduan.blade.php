@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Pengaduan</title>
     <link rel="stylesheet" href="css\bootstrap.min.css">
     <style>
         .headertabel{
@@ -31,7 +31,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item" >
-                <a class="nav-link active" aria-current="page" href="#">Pengaduan</a>
+                <a class="nav-link active" aria-current="page" href="Mengadu">Pengaduan</a>
             </ul>
           </div>
         </div>
