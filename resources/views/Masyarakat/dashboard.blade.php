@@ -20,6 +20,12 @@
           padding-right: 20%;
           padding-top: 2%;
         }
+        .buton{
+          background-color: red;
+          color: white;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          
+        }
     </style>
 </head>
 <body>
@@ -105,40 +111,12 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
-      <div class="row">
-
-        <div class="col-lg-3 col-md-6">
-        <div class="count-box">
-
-          <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
-          <p>Lembaga</p>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-        <div class="count-box">
-
-          <span data-purecounter-start="0" data-purecounter-end="180" data-purecounter-duration="1" class="purecounter"></span>
-          <p>DPRD</p>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-        <div class="count-box">
-
-          <span data-purecounter-start="0" data-purecounter-end="1500" data-purecounter-duration="1" class="purecounter"></span>
-          <p>Masyarakat Yang Puas</p>
-        </div>
-      </div>
-
-      </div>
-      {{-- <div class="container pt-5 my-4">
+      <div class="container pt-5 my-4">
         <div class="card shadow">
             <div class="card" >
                 <h5 class="card-header headertabel">Status Pengaduan</h5>
                 <div class="card-body">
-                    <h5 class="card-title"></h5>
+                    {{-- <h5 class="card-title"></h5> --}}
                     <table class=" table table-striped-columns">
                         <thead>
                             <th>NIK</th>
@@ -147,18 +125,34 @@
                             <th></th>
                         </thead>
                         <tbody>
-                            <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                            </tr>
+                        @foreach($bebas as $item)
+                        <tr>
+                          <td>{{$item->nik}}</td>
+                          <td>{{$item->nama}}</td>
+                          <td>{{$item->telpon}}</td>
+                        </tr>
+                        @endforeach
                         </tbody>
                       </table></p>
                 </div>
             </div>
         </div>
-        </div> --}}
+        </div>
       {{-- akhir nambah konten --}}
+      {{-- Footer --}}
+      <div class="container pt-5">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+          </ul>
+          <p class="text-center text-body-secondary">&copy; 2023 Company, Inc</p>
+        </footer>
+      </div>
+      
       <script src="js\bootstrap.bundle.min.js"></script>
 </body>
 </html>

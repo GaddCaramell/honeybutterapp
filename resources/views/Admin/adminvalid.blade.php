@@ -128,7 +128,23 @@
                         <h5 class="card-header headertabel">Status Pengaduan</h5>
                         <div class="card-body">
                             {{-- <h5 class="card-title"></h5> --}}
-                           
+                            <table class=" table table-striped-columns">
+                                <thead>
+                                    <th>NIK</th>
+                                    <th>Nama</th>
+                                    <th>Telpon</th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                
+                                </tbody>
+                              </table></p>
                         </div>
                     </div>
                 </div>

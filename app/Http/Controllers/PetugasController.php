@@ -28,4 +28,8 @@ class PetugasController extends Controller
         }
         return back()->with('notif','Maaf Username dan Password Gada Cuy ');
     }
+
+    public function adminValid(){
+        return view ('Admin.adminvalid');
+    }
 }
