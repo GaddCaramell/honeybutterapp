@@ -10,7 +10,7 @@ class Pengaduan extends Model
     use HasFactory;
 
     // Set Tabel
-    protected $table = "table_masyarakat";
+    protected $table = "table_pengaduan";
     
     // Set Primary Key
     protected $primaryKey = "nik";

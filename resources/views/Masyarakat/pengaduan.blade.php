@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>NGADU</title>
     <link rel="stylesheet" href="css\bootstrap.min.css">
     <style>
         .headertabel{
@@ -31,7 +31,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item" >
-                <a class="nav-link active" aria-current="page" href="#">Pengaduan</a>
+                <a class="nav-link active" aria-current="page" href="Mengadu">Pengaduan</a>
             </ul>
           </div>
         </div>
@@ -44,26 +44,47 @@
                 <h5 class="card-header headertabel">Pengaduan</h5>
                 <div class="card-body">
                     {{-- <h5 class="card-title"></h5> --}}
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="id_pengaduan" placeholder="ID Pengaduan">
+                    <form action="{{'simpanPengaduan'}}" method="post">
+                      @csrf
+                      <div class="mb-3">
+                        <input type="text" class="form-control" id="id_pengaduan" name="id_pengaduan" placeholder="ID Pengaduan">
                       </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="nik" placeholder="NIK">
+                        <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK">
                       </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="date" placeholder="DD/MM/YY">
+                        <input type="date" class="form-control" id="date" name="date" placeholder="YY/MM/DD">
                       </div>
                       <div class="mb-3" class="position-absolute top-0 end-0">
-                        <textarea class="form-control" id="isi_lapoan" rows="5" placeholder="Isi Laporan"></textarea>
+                        <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="5" placeholder="Isi Laporan"></textarea>
                       </div>
                       <div class="mb-3 w-50">
-                        <input class="form-control" type="file" id="foto" placeholder="Place an Image">
+                        <input class="form-control" type="file" id="foto" name="foto" placeholder="Place an Image">
                       </div>
-                      <button class="btn form-control btn-primary mb-2 mt-3 buton" type="submit">Buat Laporan</button>
+                      @if (session('notif'))
+                    
+                    <div class="alert alert-success" role="alert">
+                        {{session('notifikasi')}}
+                    </div>
+
+                    @endif
+                    {{-- Jika Validasi Gagal --}}
+                    @if ($errors->any())
+                    
+                    <div class="alert alert-success" role="alert">
+                        Laporan Gagal Dibuat
+                    </div>
+
+                    @endif
+                    <div>
+                      <button class="btn form-control btn-primary mb-2 mt-3 buton">Buat Laporan</button>
+                      <button class="btn form-control btn-outline-success mb-2" type="reset">Batal</button>
+                    </div>
+                  </form>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-        </div>
       {{-- akhir nambah konten --}}
       <script src="js\bootstrap.bundle.min.js"></script>
 </body>

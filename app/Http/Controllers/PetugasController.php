@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Masyarakat;
 use App\Models\Petugas;
+use App\Models\Pengaduan;
 use Illuminate\Http\Request;
 
 class PetugasController extends Controller
 {
     public function adminDash(){
         $ad = new Masyarakat();
-        return view ('Admin.admindash');
+        $pengadu = new Pengaduan();
+        $pet = new Petugas();
+        return view ('Admin.leyotutama',['pengadu'=>$pengadu->all()],['petugas'=>$pet->all()]);
     }
 
     public function adminLogin(){

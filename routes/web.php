@@ -35,7 +35,7 @@ Route::post('simpanLogin',[Masyarakat_controller::class,'cekLogin']); // <-- unt
 
 //Pengaduan
 Route::get('Mengadu',[PengaduanController::class,'pengaduan']);
-Route::post('simpanPengaduan',[PengaduanController::class,'savepengaduan']);
+Route::post('simpanPengaduan',[PengaduanController::class,'simpanPengaduan']);
 
 // LoginAdmin
 Route::get('loginadmin',[PetugasController::class,'adminLogin']);
