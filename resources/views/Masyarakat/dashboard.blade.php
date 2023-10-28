@@ -8,10 +8,6 @@
     <link rel="stylesheet" href="css\bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
-        .headertabel{
-            background-color: #662121;
-            color: white
-        }
         .judul{
           font-family: fantasy
         }
@@ -24,7 +20,16 @@
           background-color: red;
           color: white;
           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          
+        }
+        .c{
+          width: 70%;
+          display : flex;
+          justify-content: center;
+        }
+        .w{
+          width: 70%;
+          display : flex;
+          justify-content: center;
         }
     </style>
 </head>
@@ -39,7 +44,6 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item" >
-            <a class="nav-link active" aria-current="page" href="Mengadu">Pengaduan</a>
           </li>
         </ul>
       </div>
@@ -69,10 +73,12 @@
         </div>
       </div>
       </div>
-      </div>
   </nav>
   {{-- Akhir Navbar --}}  
       {{-- nambah konten --}}
+      <div class="alert alert-success" role="alert">
+        {{session('notif')}}
+      </div>
       <div id="carouselExampleCaptions" class="carousel slide korsel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -111,39 +117,16 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <div class="container pt-5 my-4">
-        <div class="card shadow">
-            <div class="card" >
-                <h5 class="card-header headertabel">Status Pengaduan</h5>
-                <div class="card-body">
-                    {{-- <h5 class="card-title"></h5> --}}
-                    <table class=" table table-striped-columns">
-                        <thead>
-                            <th>NIK</th>
-                            <th>Nama</th>
-                            <th>Telpon</th>
-                            <th></th>
-                        </thead>
-                        <tbody>
-                        @foreach($bebas as $item)
-                        <tr>
-                          <td>{{$item->nik}}</td>
-                          <td>{{$item->nama}}</td>
-                          <td>{{$item->telpon}}</td>
-                        </tr>
-                        @endforeach
-                        </tbody>
-                      </table></p>
-                </div>
-            </div>
-        </div>
-        </div>
+      <div class="container pt-5 c">
+                  <a href="{{url('Mengadu')}}" class="btn btn-secondary w">Buat Laporan!!</a>
+                    </div>
+                  </div>
       {{-- akhir nambah konten --}}
       {{-- Footer --}}
       <div class="container pt-5">
         <footer class="py-3 my-4">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"> Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>

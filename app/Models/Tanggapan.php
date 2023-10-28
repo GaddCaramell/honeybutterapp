@@ -13,7 +13,7 @@ class Tanggapan extends Model
     protected $table = "table_masyarakat";
     
     // Set Primary Key
-    protected $primaryKey = "nik";
+    protected $primaryKey = "id_tanggapan";
     
     // Set Auto Increment
     public $incrementing = "false";

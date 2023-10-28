@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>NGADU!!</title>
     <link rel="stylesheet" href="css\bootstrap.min.css">
     <style>
         .headertabel{
@@ -30,11 +30,30 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item" >
-                <a class="nav-link active" aria-current="page" href="Mengadu">Pengaduan</a>
+              <li class="nav-item">
             </ul>
           </div>
         </div>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Menu</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Choose one 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Login</button>
+              <a href="login">
+                <button type="button" class="btn btn-primary">Logout</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       </nav>
       {{-- Akhir Navbar --}}
       {{-- nambah konten --}}
@@ -44,16 +63,13 @@
                 <h5 class="card-header headertabel">Pengaduan</h5>
                 <div class="card-body">
                     {{-- <h5 class="card-title"></h5> --}}
-                    <form action="{{'simpanPengaduan'}}" method="post">
+                    <form action="{{'simpanPengaduan'}}" method="post" enctype="multipart/form-data">
                       @csrf
-                      <div class="mb-3">
-                        <input type="text" class="form-control" id="id_pengaduan" name="id_pengaduan" placeholder="ID Pengaduan">
-                      </div>
                     <div class="mb-3">
                         <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK">
                       </div>
                     <div class="mb-3">
-                        <input type="date" class="form-control" id="date" name="date" placeholder="YY/MM/DD">
+                        <input type="date" class="form-control" id="tanggal_pengaduan" name="tanggal_pengaduan" placeholder="YY/MM/DD">
                       </div>
                       <div class="mb-3" class="position-absolute top-0 end-0">
                         <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="5" placeholder="Isi Laporan"></textarea>
@@ -61,7 +77,7 @@
                       <div class="mb-3 w-50">
                         <input class="form-control" type="file" id="foto" name="foto" placeholder="Place an Image">
                       </div>
-                      @if (session('notif'))
+                      @if (session('notifikasi'))
                     
                     <div class="alert alert-success" role="alert">
                         {{session('notifikasi')}}

@@ -13,13 +13,13 @@ class Pengaduan extends Model
     protected $table = "table_pengaduan";
     
     // Set Primary Key
-    protected $primaryKey = "nik";
+    protected $primaryKey = "id_pengaduan";
     
     // Set Auto Increment
     public $incrementing = "false";
 
     // Set DataType primary key
-    
+    protected $keyType = "string";
 
     // Setting kolom yang dapat diisi dengan massal
 

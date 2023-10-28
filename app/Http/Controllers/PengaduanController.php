@@ -16,15 +16,26 @@ class PengaduanController extends Controller
     public function simpanPengaduan(Request $request){
         $pengadu = new Pengaduan();
         
+        //variable untuk menampung file
+        $fl = $request->file('foto');
+        //choosen path
+        $fold = 'upload_data_fotoo';
+        //target file ke folder
+        $fl->move($fold,$fl->getClientOriginalName());
+        
         $cek = $request->validate([
-            'id_pengaduan'=>'required|unique:table_pengaduan|max:10',
             'nik'=>'required|max:16',
             'tanggal_pengaduan'=>'required',
             'isi_laporan'=>'required',
-            'foto'=>'required',
         ]);
 
-        $pengadu->create($request->all());
+        $pengadu->create([
+            'nik'=>$request->input('nik'),
+            'tanggal_pengaduan'=>$request->input('tanggal_pengaduan'),
+            'isi_laporan'=>$request->input('isi_laporan'),
+            'foto'=>$fl->getClientOriginalName(),
+            'status'=>'0' 
+        ]);
         return back()->with('notifikasi','Laporan Telah Dibuat');
     }
 }

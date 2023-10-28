@@ -60,6 +60,7 @@
         <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Validasi Report</span></a></li>
         <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Tanggapan</span></a></li>
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        <li><a href="loginpetu" class="nav-link scrollto"><i class="bx bx-door-open"></i> <span>Logout</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
 
@@ -72,11 +73,12 @@
       <p>Selamat Datang di LAPORKAN! Anda Dapat Melaporkan <span class="typed" data-typed-items=" Masalah Rumah, Penipuan, , Pencurian, Dan Sebagainya"></span></p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.facebook.com/hansmyko.hansmyko.7?locale=id_ID" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/jagadrasa_/" class="instagram"><i class="bx bxl-instagram"></i></a>
       </div>
     </div>
-  </section><!-- End Hero -->
+  </section>
+  <!-- End Hero -->
 
   <main id="main">
 
@@ -240,7 +242,7 @@
                                       <td>{{$petu->telp}}</td>                                      
                                       <td>{{$petu->level}}</td>                                      
                                       <td>
-                                        <a href="#" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></a>
+                                        <a href="#services" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></a>
                                         <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                       </td>
                                     </tr>
@@ -287,8 +289,9 @@
                               {{-- <h5 class="card-title"></h5> --}}
                               <table class=" table table-striped-columns">
                                   <thead>
-                                      <th>No</th>
-                                      <th>Nama</th>
+                                      <th>ID</th>
+                                      <th>NIK</th>
+                                      <th>Tanggal</th>
                                       <th>Laporan</th>
                                       <th>Foto</th>
                                       <th>Status</th>
@@ -297,14 +300,16 @@
                                   <tbody>
                                     @foreach ($pengadu as $aduan)
                                     <tr>
+                                      <td>{{$aduan->id_pengaduan}}</td>
                                       <td>{{$aduan->nik}}</td>
                                       <td>{{$aduan->tanggal_pengaduan}}</td>
                                       <td>{{$aduan->isi_laporan}}</td>
                                       <td>{{$aduan->foto}}</td>
                                       <td>{{$aduan->status}}</td>
                                       <td>
-                                        <a href="#" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></a>
-                                        <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                        <div>
+                                          <a href="" class="btn btn-primary" type="submit">Validasi</a>
+                                        </div>
                                       </td>
                                     </tr>
                                     @endforeach
@@ -319,7 +324,8 @@
         </div>
           
         </div>
-    </section><!-- End Portfolio Section -->
+    </section>
+    <!-- End Portfolio Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -333,13 +339,13 @@
         <div class="container pt-5 my-4">
           <div class="card shadow">
               <div class="card" >
-                  <h5 class="card-header headertabel">Pengaduan</h5>
+                  <h5 class="card-header headertabel">Tanggapan</h5>
                   <div class="card-body">
                       {{-- <h5 class="card-title"></h5> --}}
                       <form action="{{''}}" method="post">
                         @csrf
                         <div class="mb-3">
-                          <input type="text" class="form-control" id="id_tanggapan" name="id_tanggapan" placeholder="ID Tanggapan">
+                          <input type="text" class="form-control" id="id_pengaduan" name="id_pengaduan" placeholder="ID Pengaduan">
                         </div>
                         <div class="mb-3">
                             <input type="date" class="form-control" id="tanggal_pengaduan" name="tanggal_pengaduan" placeholder="YY/MM/DD">
@@ -353,7 +359,7 @@
                         @if (session('notif'))
                       
                       <div class="alert alert-success" role="alert">
-                          {{session('notifikasi')}}
+                          tanggapan Dibuat
                       </div>
   
                       @endif
@@ -361,7 +367,7 @@
                       @if ($errors->any())
                       
                       <div class="alert alert-success" role="alert">
-                          Laporan Gagal Dibuat
+                          Tanggapan Gagal Dibuat
                       </div>
   
                       @endif
@@ -476,19 +482,19 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>Perum BIC Purwakarta, WNK 41118</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>jagadrasa0071@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>+62 859 7460 1159</p>
               </div>
 
             </div>
@@ -532,7 +538,7 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Brandon Johnson</h3>
+      <h3>LAPORKAN!</h3>
       <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -542,7 +548,7 @@
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright <strong><span>MyResume</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>LAPORKAN!</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
